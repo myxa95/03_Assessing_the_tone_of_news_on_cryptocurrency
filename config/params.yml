@@ -1,0 +1,36 @@
+parsing:
+  API: 9d65e924-9563-4576-8a9f-4174f34ea698 #coinmarketcap api
+
+preprocessing:
+  pred_days: 0.2
+  drop_trash: 
+  train_path: '../data/df_train.csv'
+  test_path: '../data/df_test.csv'
+  df_path: '../data/df.csv'
+  
+train:
+  pred_days_forecast: 180
+  backend_path: '../backend/src/data'
+  data_path: '../data'
+  model_path: '../models/prophet_best_model.joblib'
+  params_path: '../models/prophet_best_params.joblib'
+  metrics_path: '../report/metrics.json'
+  dict_metrics_path: '../report/dict_metrics.json'
+  train_path: '../data/df_train.csv'
+  test_path: '../data/df_test.csv'
+  df_path: '../data/df.csv'
+  df_forecast: '../data/df_forecast.csv'
+  N_TRIALS: 20
+  TIMEOUT: 1800
+  model_path_future: '../models/prophet_best_model_future.joblib'
+  params_path_future: '../models/prophet_best_params_future.joblib'
+  df_forecast_future: '../data/df_forecast_future.csv'
+
+frontend:
+  main_image: '../data/frontend/main_image.png'
+
+endpoints:
+  # train_test: 'http://localhost:8000/train_test'
+  # train_future: 'http://localhost:8000/train_future'
+  train_test: 'http://fastapi:8000/train_test'
+  train_future: 'http://fastapi:8000/train_future'
